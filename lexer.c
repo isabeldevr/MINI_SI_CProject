@@ -18,7 +18,7 @@ void initializeLexer(Lexer* lexer, const char* input) {
 }
 
 // Function to skip the whitespace
-void skipWhitespace(Lexer* lexer) { // (ADLT) Change function name to skip_whitespace_tab_newline()
+void skipWhitespace(Lexer* lexer) {
     while (lexer->current_char == '\n' || lexer->current_char == '\t' || lexer->current_char == ' ') {
         lexer->position += 1;
         lexer->current_char = lexer->contents[lexer->position];
@@ -150,7 +150,7 @@ int advanceLexer(Lexer* lexer, Token** token_list, int* num_tokens) {
                     lexer->current_char = lexer->contents[lexer->position];
 
                 } else {
-                    printf("ERROR: Expected """ "but found EOF\n");
+                    printf("Syntax Error: Missing closing \" \" \" for message in PRINT statement\n");
                     return 0;
                 }
 
@@ -178,7 +178,7 @@ int advanceLexer(Lexer* lexer, Token** token_list, int* num_tokens) {
                     lexer->current_char = lexer->contents[lexer->position];
 
                 } else {
-                    printf("ERROR: Expected ')' but found EOF\n");
+                    printf("Syntax Error: Expected ')' but found EOF\n");
                     return 0;
                 }
             }

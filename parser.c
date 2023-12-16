@@ -64,12 +64,9 @@ ASTNode* parseTokensIntoAST(Token* token_list, int num_tokens) {
                         value = strtok(NULL, ",");
                     }
                 } else {
-                    // Create a new token with the correct type
-                    Token newToken = {ARGUMENT, ARGUMENT_TYPE, token_list[i].value};
-                    // Create a new node for the new token
-                    newNode = newASTNode(newToken, CHILD);
-                    // Add the new node as a child of the current parent
-                    addChildNode(currentParent, newNode);
+                    // Syntax error for string
+                    printf("Syntax error:\n---> Missing "" "  "\" \" \"  for arguments PRINT statement\n");;
+                    exit(1);
                 }
                 break;
             default:

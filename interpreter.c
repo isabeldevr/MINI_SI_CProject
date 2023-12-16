@@ -62,7 +62,7 @@ void processNode(ASTNode* root, char* arguments[]){
             perform_complain();
             break;
         default:
-            printf("Error, unknown syntax.\n");
+            printf("Syntax Error, unknown syntax.\n");
             break;
     }
 }
@@ -130,8 +130,9 @@ int is_number(char* str) {
 }
 
 void perform_print(char* arguments[]) {
+
     if (arguments[0] == NULL) {
-        printf("Error: No argument provided for PRINT command.\n");
+        printf("Syntax Error: No argument provided for PRINT command.\n");
         return;
     }
 
@@ -160,13 +161,13 @@ void perform_print(char* arguments[]) {
 void perform_set(char* arguments[]) {
     // Check if arguments are NULL
     if (arguments[0] == NULL || arguments[1] == NULL) {
-        printf("Error: Missing arguments in SET command.\n");
+        printf("Syntax Error: Missing arguments in SET command.\n");
         return;
     }
 
     // Check if the variable name is too long
     if (strlen(arguments[0]) >= sizeof(variables[0].name)) {
-        printf("Error: Variable name '%s' is too long.\n", arguments[0]);
+        printf("Syntax Error: Variable name '%s' is too long.\n", arguments[0]);
         return;
     }
 
@@ -182,7 +183,7 @@ void perform_set(char* arguments[]) {
 
     // Check if we have reached the maximum number of variables
     if (variable_count >= MAX_VARS) {
-        printf("Error: Variable storage limit reached.\n");
+        printf("Syntax Error: Variable storage limit reached.\n");
         return;
     }
 
@@ -197,7 +198,7 @@ void perform_set(char* arguments[]) {
 void perform_add(char* arguments[]) {
     // Check if arguments are valid
     if (arguments[0] == NULL || arguments[1] == NULL) {
-        printf("Error: Missing arguments for ADD command.\n");
+        printf("Syntax Error: Missing arguments for ADD command.\n");
         return;
     }
 
@@ -220,9 +221,9 @@ void perform_add(char* arguments[]) {
                 break;
             }
         }
-        // If not a variable, print error and return
+        // If not a variable, print Syntax Error and return
         if (!foundVar1) {
-            printf("Error: '%s' is not a valid number or recognized variable.\n", trimmed_arg1);
+            printf("Syntax Error: '%s' is not a valid number or recognized variable.\n", trimmed_arg1);
             return;
         }
     }
@@ -239,10 +240,10 @@ void perform_add(char* arguments[]) {
                 break;
             }
         }
-        // If not a variable, print error and return
+        // If not a variable, print Syntax Error and return
         if (!foundVar2) {
-            fprintf(stderr, "Error: '%s' is not a valid number or recognized variable.\n", trimmed_arg2);
-            printf("Error: '%s' is not a valid number or recognized variable.\n", trimmed_arg2);
+            fprintf(stderr, "Syntax Error: '%s' is not a valid number or recognized variable.\n", trimmed_arg2);
+            printf("Syntax Error: '%s' is not a valid number or recognized variable.\n", trimmed_arg2);
             return;
         }
     }
@@ -254,7 +255,7 @@ void perform_add(char* arguments[]) {
 
 void perform_isequal(char* arguments[]) {
     if (arguments[0] == NULL || arguments[1] == NULL) {
-        printf("Error: Missing arguments for ISEQUAL command.\n");
+        printf("Syntax Error: Missing arguments for ISEQUAL command.\n");
         return;
     }
 
@@ -277,7 +278,7 @@ void perform_isequal(char* arguments[]) {
             }
         }
         if (!foundVar1) {
-            printf("Error: Variable '%s' not found.\n", trimmed_arg1);
+            printf("Syntax Error: Variable '%s' not found.\n", trimmed_arg1);
             return;
         }
     }
@@ -294,7 +295,7 @@ void perform_isequal(char* arguments[]) {
             }
         }
         if (!foundVar2) {
-            printf("Error: Variable '%s' not found.\n", trimmed_arg2);
+            printf("Syntax Error: Variable '%s' not found.\n", trimmed_arg2);
             return;
         }
     }
@@ -309,7 +310,7 @@ void perform_isequal(char* arguments[]) {
 
 void perform_ifgreaterthan(char* arguments[]) {
     if (arguments[0] == NULL || arguments[1] == NULL) {
-        fprintf(stderr, "Error: Missing arguments for IFGREATERTHAN command.\n");
+        fprintf(stderr, "Syntax Error: Missing arguments for IFGREATERTHAN command.\n");
         return;
     }
 
@@ -331,7 +332,7 @@ void perform_ifgreaterthan(char* arguments[]) {
             }
         }
         if (!foundVar1) {
-            fprintf(stderr, "Error: Argument 1 ('%s') is not a valid number or recognized variable.\n", trimmed_arg1);
+            fprintf(stderr, "Syntax Error: Argument 1 ('%s') is not a valid number or recognized variable.\n", trimmed_arg1);
             return;
         }
     }
@@ -348,7 +349,7 @@ void perform_ifgreaterthan(char* arguments[]) {
             }
         }
         if (!foundVar2) {
-            fprintf(stderr, "Error: Argument 2 ('%s') is not a valid number or recognized variable.\n", trimmed_arg2);
+            fprintf(stderr, "Syntax Error: Argument 2 ('%s') is not a valid number or recognized variable.\n", trimmed_arg2);
             return;
         }
     }
@@ -364,7 +365,7 @@ void perform_ifgreaterthan(char* arguments[]) {
 
 void perform_iflessthan(char* arguments[]){
     if (arguments[0] == NULL || arguments[1] == NULL) {
-        fprintf(stderr, "Error: Missing arguments for IFGREATERTHAN command.\n");
+        fprintf(stderr, "Syntax Error: Missing arguments for IFGREATERTHAN command.\n");
         return;
     }
 
@@ -386,7 +387,7 @@ void perform_iflessthan(char* arguments[]){
             }
         }
         if (!foundVar1) {
-            fprintf(stderr, "Error: Argument 1 ('%s') is not a valid number or recognized variable.\n", trimmed_arg1);
+            fprintf(stderr, "Syntax Error: Argument 1 ('%s') is not a valid number or recognized variable.\n", trimmed_arg1);
             return;
         }
     }
@@ -403,7 +404,7 @@ void perform_iflessthan(char* arguments[]){
             }
         }
         if (!foundVar2) {
-            fprintf(stderr, "Error: Argument 2 ('%s') is not a valid number or recognized variable.\n", trimmed_arg2);
+            fprintf(stderr, "Syntax Error: Argument 2 ('%s') is not a valid number or recognized variable.\n", trimmed_arg2);
             return;
         }
     }
@@ -420,7 +421,7 @@ void perform_iflessthan(char* arguments[]){
 
 void perform_multiply(char* arguments[]) {
     if (arguments[0] == NULL || arguments[1] == NULL) {
-        fprintf(stderr, "Error: Missing arguments for MULTIPLY command.\n");
+        fprintf(stderr, "Syntax Error: Missing arguments for MULTIPLY command.\n");
         return;
     }
 
@@ -429,7 +430,7 @@ void perform_multiply(char* arguments[]) {
 
     // Check if arguments are empty after trimming
     if (trimmed_arg1[0] == '\0' || trimmed_arg2[0] == '\0') {
-        fprintf(stderr, "Error: Invalid arguments for MULTIPLY command.\n");
+        fprintf(stderr, "Syntax Error: Invalid arguments for MULTIPLY command.\n");
         return;
     }
 
@@ -448,7 +449,7 @@ void perform_multiply(char* arguments[]) {
             }
         }
         if (!foundVar1) {
-            fprintf(stderr, "Error: '%s' is not a valid number or recognized variable.\n", trimmed_arg1);
+            fprintf(stderr, "Syntax Error: '%s' is not a valid number or recognized variable.\n", trimmed_arg1);
             return;
         }
     }
@@ -465,7 +466,7 @@ void perform_multiply(char* arguments[]) {
             }
         }
         if (!foundVar2) {
-            fprintf(stderr, "Error: '%s' is not a valid number or recognized variable.\n", trimmed_arg2);
+            fprintf(stderr, "Syntax Error: '%s' is not a valid number or recognized variable.\n", trimmed_arg2);
             return;
         }
     }
@@ -476,7 +477,7 @@ void perform_multiply(char* arguments[]) {
 
 void perform_divide(char* arguments[]) {
     if (arguments[0] == NULL || arguments[1] == NULL) {
-        fprintf(stderr, "Error: Missing arguments for DIVIDE command.\n");
+        fprintf(stderr, "Syntax: Missing arguments for DIVIDE command.\n");
         return;
     }
 
@@ -485,7 +486,7 @@ void perform_divide(char* arguments[]) {
 
     // Check if arguments are empty after trimming
     if (trimmed_arg1[0] == '\0' || trimmed_arg2[0] == '\0') {
-        fprintf(stderr, "Error: Invalid arguments for DIVIDE command.\n");
+        fprintf(stderr, "Syntax Error: Invalid arguments for DIVIDE command.\n");
         return;
     }
 
@@ -504,7 +505,7 @@ void perform_divide(char* arguments[]) {
             }
         }
         if (!foundVar1) {
-            fprintf(stderr, "Error: Argument 1 ('%s') is not a valid number or recognized variable.\n", trimmed_arg1);
+            fprintf(stderr, "Syntax Error: Argument 1 ('%s') is not a valid number or recognized variable.\n", trimmed_arg1);
             return;
         }
     }
@@ -513,7 +514,7 @@ void perform_divide(char* arguments[]) {
     if (is_number(trimmed_arg2)) {
         var2 = atoi(trimmed_arg2);
         if (var2 == 0) {
-            fprintf(stderr, "Error: Division by zero is not allowed.\n");
+            fprintf(stderr, "Syntax Error: Division by zero is not allowed.\n");
             return;
         }
     } else {
@@ -525,11 +526,11 @@ void perform_divide(char* arguments[]) {
             }
         }
         if (!foundVar2) {
-            fprintf(stderr, "Error: Argument 2 ('%s') is not a valid number or recognized variable.\n", trimmed_arg2);
+            fprintf(stderr, "Syntax Error: Argument 2 ('%s') is not a valid number or recognized variable.\n", trimmed_arg2);
             return;
         }
         if (var2 == 0) {
-            fprintf(stderr, "Error: Division by zero is not allowed.\n");
+            fprintf(stderr, "Syntax Error: Division by zero is not allowed.\n");
             return;
         }
     }
@@ -542,7 +543,7 @@ void perform_divide(char* arguments[]) {
 
 void perform_subtract(char* arguments[]) {
     if (arguments[0] == NULL || arguments[1] == NULL) {
-        fprintf(stderr, "Error: Missing arguments for SUBTRACT command.\n");
+        fprintf(stderr, "Syntax Error: Missing arguments for SUBTRACT command.\n");
         return;
     }
 
@@ -551,7 +552,7 @@ void perform_subtract(char* arguments[]) {
 
     // Check if arguments are empty after trimming
     if (trimmed_arg1 == NULL || trimmed_arg2 == NULL || trimmed_arg1[0] == '\0' || trimmed_arg2[0] == '\0') {
-        fprintf(stderr, "Error: Invalid arguments for SUBTRACT command.\n");
+        fprintf(stderr, "Syntax Error: Invalid arguments for SUBTRACT command.\n");
         return;
     }
 
@@ -570,7 +571,7 @@ void perform_subtract(char* arguments[]) {
             }
         }
         if (!foundVar1) {
-            fprintf(stderr, "Error: Argument 1 ('%s') is not a valid number or recognized variable.\n", trimmed_arg1);
+            fprintf(stderr, "Syntax Error: Argument 1 ('%s') is not a valid number or recognized variable.\n", trimmed_arg1);
             return;
         }
     }
@@ -587,7 +588,7 @@ void perform_subtract(char* arguments[]) {
             }
         }
         if (!foundVar2) {
-            fprintf(stderr, "Error: Argument 2 ('%s') is not a valid number or recognized variable.\n", trimmed_arg2);
+            fprintf(stderr, "Syntax Error: Argument 2 ('%s') is not a valid number or recognized variable.\n", trimmed_arg2);
             return;
         }
     }
