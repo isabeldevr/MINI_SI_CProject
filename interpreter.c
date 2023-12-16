@@ -150,7 +150,7 @@ void perform_print(char* arguments[]) {
 
     // Print based on whether it's a variable or not
     if (isVariable) {
-        printf("Variable '%s' has value: %d\n", arguments[0], value);
+        printf("Printing %s: \n%s = %d", arguments[0], arguments[0], value);
     } else {
         printf("Printing: %s\n", arguments[0]);
     }
