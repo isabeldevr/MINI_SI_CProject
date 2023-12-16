@@ -10,7 +10,7 @@
 
 int main() {
     FILE *fp;
-    fp = fopen("test_file.txt", "r");
+    fp = fopen("code.mini_si", "r");
     if (fp == NULL) {
         printf("ERROR RUNNING FILE\n");
         return 1;

@@ -1,0 +1,27 @@
+<program> ::= <statement> ("\n" <statement>)*
+
+<statement> ::= "PRINT" " " "(" <expression> ")"
+             | "SET" " " "(" <variable> "," <expression> ")"
+             | "MULTIPLY" " " "(" <expression> "," <expression> ")"
+             | "ADD" " " "(" <variable> "," <expression> ")"
+             | "COMPLAIN"
+
+<expression> ::= <term> (  "," <term>)*
+
+<term> ::= <factor>
+
+<factor> ::= <variable>
+          | <number>
+          | "(" <expression> ")"
+          | "\"" <string> "\""
+
+<string> ::= <char>*
+<char>   ::= "\\" | "\"" | "\n" | <letter> | " "
+
+<variable> ::= <letter>+
+
+<number> ::= <digit>+
+
+<letter> ::= "A" | "B" | [a-z] | [A-Z]
+
+<digit> ::= [0-9]
