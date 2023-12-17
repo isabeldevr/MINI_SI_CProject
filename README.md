@@ -22,9 +22,9 @@ If you wish to use a different name, please change the input  file name in the m
   * SUBSTRACT: This command performs substraction between two integers.
   * MULTIPLY: This command performs multiplication between two integers.
   * DIVIDE: This command performs division between two integers.
-  * ISEQUAL: This command checks if two integers are equal.
-  * ISGREATERTHAN: This command checks if the integer on the right is greater than another integer (at the left)
-  * ISLESSTHAN: This command checks if the integer on the right is less than another integer (at the left)
+  * IFEQUAL: This command checks if two integers are equal.
+  * IFGREATERTHAN: This command checks if the integer on the right is greater than another integer (at the left)
+  * IFLESSTHAN: This command checks if the integer on the right is less than another integer (at the left)
   * COMPLAIN: This command generates a random complaint message.
 
 Other tokens like MESSAGE and ARGUMENT are used as values or arguments for the above commands.
