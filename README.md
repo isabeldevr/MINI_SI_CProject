@@ -8,13 +8,12 @@ https://github.com/isabeldevr/MINI_SI_CProject/assets/130999443/c1ff75c5-21e8-4b
 
 ## Requirements for compiling code:
 C compiler (Such as GCC provided by MSyS2) \
-Any IDE to edit the code such as VSC
+Any IDE to edit the code such as VSC \
 The CMakeList for the language has been included to configure the code compilation.
 
 ## Requirements for running code:
 Please write your code in a text file under the name code.mini_si. \
-If you wish to use a different name \
-Please change the input  file name in the main.c file.
+If you wish to use a different name please change the input  file name in the main.c file.
 
 ## Commands supported by our basic language:
   * PRINT: This command prints a message to the console.
