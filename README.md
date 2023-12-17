@@ -10,11 +10,11 @@ Creation of a basic C language for beginners.
   Any IDE to edit the code such as VSC
 
 ## Commands supported by our basic language:
-  PRINT: This command prints a message to the console.
-  SET: This command sets a variable to a value.
-  ADD: This command performs addition between two integers.
-  ISZERO: This command checks if an integer is zero.
-  COMPLAIN: This command generates a generic complaint message.
+  PRINT: This command prints a message to the console. 
+  SET: This command sets a variable to a value. 
+  ADD: This command performs addition between two integers. 
+  ISZERO: This command checks if an integer is zero. 
+  COMPLAIN: This command generates a generic complaint message. 
   
   Other tokens like MESSAGE and ARGUMENT are used as values or arguments for the above commands.
   
