@@ -1,12 +1,17 @@
 <program> ::= <statement> ("\n" <statement>)*
 
 <statement> ::= "PRINT" " " "(" <expression> ")"
-             | "SET" " " "(" <variable> "," <expression> ")"
-             | "MULTIPLY" " " "(" <expression> "," <expression> ")"
-             | "ADD" " " "(" <variable> "," <expression> ")"
+             | "SET" " " "(" <variable>  ", " <expression> ")"
+             | "ADD" " " "(" <expression> ", " <expression> ")"
+             | "SUBSTRACT" " " "(" <expression> ", " <expression> ")"
+             | "MULTIPLY" " " "(" <expression> ", " <expression> ")"
+             | "DIVIDE" " " "(" <expression> ", " <expression> ")"
+             | "IFEQUAL" " " "(" <expression> ", " <expression> ")"
+             | "IFGREATERTHAN" " " "(" <expression> ", " <expression> ")"
+             | "IFLESSTHAN" " " "(" <expression> "," <expression> ")"
              | "COMPLAIN"
 
-<expression> ::= <term> (  "," <term>)*
+<expression> ::= <term> ( "," " " <term>)*
 
 <term> ::= <factor>
 
