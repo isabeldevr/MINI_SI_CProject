@@ -13,7 +13,8 @@ The CMakeList for the language has been included to configure the code compilati
 
 ## Requirements for running code:
 Please write your code in a text file under the name code.mini_si. \
-If you wish to use a different name, please change the input  file name in the main.c file.
+If you wish to use a different name \
+Please change the input  file name in the main.c file.
 
 ## Commands supported by our basic language:
   * PRINT: This command prints a message to the console.
