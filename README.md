@@ -1,21 +1,21 @@
 
 # ☁️ MINI_SI - A simple programming language ☁️ 
-## The concept:
+## The concept
 This language is designed to facilitate programming to beginners with no coding background. It includes a set of basic commands to perform simple tasks like printing a message or carrying out mathematics operations. 
 
 
 https://github.com/isabeldevr/MINI_SI_CProject/assets/130999443/c1ff75c5-21e8-4bf1-be3a-d084ab5534cd
 
-## Requirements for compiling code:
+## Requirements for compiling the code
 C compiler (Such as GCC provided by MSyS2). \
 Any IDE to edit the code such as VSC. \
 The CMakeList for the language has been included to configure the code compilation.
 
-## Requirements for running code:
+## Requirements for running the code 🏃
 Please write your code in a text file under the name code.mini_si. \
 If you wish to use a different name please change the input  file name in the main.c file.
 
-## Commands supported by our basic language:
+## Supported Commands ✔️
   * PRINT: This command prints a message to the console.
   * SET: This command sets a variable to a value.
   * ADD: This command performs addition between two integers.
